@@ -108,7 +108,7 @@ export class AppComponent {
           if (current_seats == 0) {
             // if assignment done set flag
             this.bookingResult = ' Seats Are ';
-            // if assignment done
+            // if assignment done break the loop
             break;
           }
         }
