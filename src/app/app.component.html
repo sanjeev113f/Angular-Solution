@@ -1,0 +1,32 @@
+<h1>Welcome to Train Coach</h1>
+
+<div class="coach">
+  <div class="row" *ngFor="let row of coach; let i = index">
+    <div
+      class="seat"
+      *ngFor="let seat of row; let j = index"
+      [style.backgroundColor]="colors[seat]"
+    >
+      {{ i + 1 }}{{ j + 1 }}
+    </div>
+  </div>
+</div>
+
+<div class="booking-form">
+  <form (ngSubmit)="onSubmit()">
+    <br /><br />
+    <label for="numSeats">Number of seats:</label>
+    <input type="number" name="numSeats" [(ngModel)]="numSeats" />
+    <button type="submit">Book seats</button>
+  </form>
+
+  <p *ngIf="bookingResult">
+    {{ bookingResult }}
+  </p>
+
+  <ul>
+    <li *ngFor="let seat of seatsList">{{seat}}</li>
+  </ul>
+
+  
+</div>
